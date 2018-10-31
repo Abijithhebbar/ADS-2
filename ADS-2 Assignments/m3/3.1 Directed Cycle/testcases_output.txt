@@ -1,0 +1,88 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+Cycle doesn't exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "2 3 "
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------
+########## Testcase 1: Failed ##########
+Expected Output: 
+Cycle doesn't exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "2 3 "
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------
+########## Testcase 2: Failed ##########
+Expected Output: 
+Cycle exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "4 2"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------
+########## Testcase 3: Failed ##########
+Expected Output: 
+Cycle exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "0 0"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------
+########## Testcase 4: Failed ##########
+Expected Output: 
+Cycle exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "0 1"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------
+########## Testcase 5: Failed ##########
+Expected Output: 
+Cycle exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "4 2"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------
+########## Testcase 6: Failed ##########
+Expected Output: 
+Cycle doesn't exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "0 1"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------
+########## Testcase 7: Failed ##########
+Expected Output: 
+Cycle exists.
+Your Output: 
+Exception in thread "main" java.lang.NumberFormatException: For input string: "0 1"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at Digraph.<init>(Digraph.java:37)
+	at Solution.main(Solution.java:17)
+----------------------------------------

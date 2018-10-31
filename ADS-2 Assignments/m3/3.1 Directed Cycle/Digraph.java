@@ -1,5 +1,6 @@
 import java.util.NoSuchElementException;
-import java.util.Scanner;
+// import java.util.Scanner;
+import java.util.*;
 public class Digraph {
     private static final String NEWLINE = System.getProperty("line.separator");
 
@@ -34,8 +35,9 @@ public class Digraph {
             int E = Integer.parseInt(in.nextLine());
             if (E < 0) throw new IllegalArgumentException("number of edges in a Digraph must be nonnegative");
             for (int i = 0; i < E; i++) {
-                int v = Integer.parseInt(in.nextLine());
-                int w = Integer.parseInt(in.nextLine());
+                String[] inp = in.nextLine().split(" ");
+                int v = Integer.parseInt(inp[0]);
+                int w = Integer.parseInt(inp[1]);
                 validateVertex(v);
                 validateVertex(w);
                 addEdge(v, w);

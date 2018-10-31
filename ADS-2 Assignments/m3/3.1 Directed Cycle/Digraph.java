@@ -1,11 +1,25 @@
 import java.util.NoSuchElementException;
 // import java.util.Scanner;
 import java.util.*;
+/**
+ * Class digraph.
+ **/
 public class Digraph {
+    /**
+     * String.
+     */
     private static final String NEWLINE = System.getProperty("line.separator");
-
+/**
+ * Int.
+ */
     private final int V;
+    /**
+     * Int.
+     */
     private int E;
+    /**
+     * Bag of integers.
+     */
     private Bag<Integer>[] adj;
 
     /**
@@ -24,16 +38,22 @@ public class Digraph {
             adj[v] = new Bag<Integer>();
         }
     }
+    /**.
+     * @param in Scanner object.
+     * @return digraph.
+     */
     public Digraph(Scanner in) {
         try {
             this.V = Integer.parseInt(in.nextLine());
-            if (V < 0) throw new IllegalArgumentException("number of vertices in a Digraph must be nonnegative");
+            if (V < 0) throw new IllegalArgumentException(
+                "number of vertices in a Digraph must be nonnegative");
             adj = (Bag<Integer>[]) new Bag[V];
             for (int v = 0; v < V; v++) {
                 adj[v] = new Bag<Integer>();
             }
             int E = Integer.parseInt(in.nextLine());
-            if (E < 0) throw new IllegalArgumentException("number of edges in a Digraph must be nonnegative");
+            if (E < 0) throw new IllegalArgumentException(
+                "number of edges in a Digraph must be nonnegative");
             for (int i = 0; i < E; i++) {
                 String[] inp = in.nextLine().split(" ");
                 int v = Integer.parseInt(inp[0]);
@@ -44,7 +64,8 @@ public class Digraph {
             }
         }
         catch (NoSuchElementException e) {
-            throw new IllegalArgumentException("invalid input format in Digraph constructor", e);
+            throw new IllegalArgumentException(
+                "invalid input format in Digraph constructor", e);
         }
     }
 
@@ -88,9 +109,13 @@ public class Digraph {
     }
 
     // throw an IllegalArgumentException unless {@code 0 <= v < V}
+    /**
+     * @param v int.
+     **/
     private void validateVertex(int v) {
         if (v < 0 || v >= V)
-            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+            throw new IllegalArgumentException("vertex " + v +
+                " is not between 0 and " + (V-1));
     }
 
     /**
@@ -98,7 +123,8 @@ public class Digraph {
      *
      * @param  v one vertex in the edge
      * @param  w the other vertex in the edge
-     * @throws IllegalArgumentException unless both {@code 0 <= v < V} and {@code 0 <= w < V}
+     * @throws IllegalArgumentException unless both
+     * {@code 0 <= v < V} and {@code 0 <= w < V}
      */
     public void addEdge(int v, int w) {
         validateVertex(v);

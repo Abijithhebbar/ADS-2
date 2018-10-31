@@ -21,16 +21,13 @@ Starting audit...
 [ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:92: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:99: Expected @return tag. [JavadocMethod]
 [ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:101: 'for' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:108: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:108: Line is longer than 80 characters (found 86). [LineLength]
 [ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:110: Expected @return tag. [JavadocMethod]
 [ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:110:39: '{' at column 39 should have line break after. [LeftCurly]
 [ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:113: Missing a Javadoc comment. [JavadocType]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:114:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:115: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:115:35: '{' at column 35 should have line break after. [LeftCurly]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:116: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:116:35: '{' at column 35 should have line break after. [LeftCurly]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:118:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:119: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:137:29: '{' at column 29 should have line break after. [LeftCurly]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:137:30: '{' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:137:65: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m3\3.1 Directed Cycle\Stack.java:137:65: '}' is not preceded with whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 33 errors.
+Checkstyle ends with 30 errors.

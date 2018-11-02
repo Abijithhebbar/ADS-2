@@ -101,7 +101,7 @@ public class WordNet {
  * @param synsets String.
  * @throws Exception for null.
  */
-    private void buildht(String synsets)throws Exception {
+    private void buildht(final String synsets)throws Exception {
         ht = new LinearProbingHashST<String, ArrayList<Integer>>();
         ht1 = new LinearProbingHashST<Integer, String>();
         Scanner sc = new Scanner(new File(synsets));
@@ -190,8 +190,8 @@ public class WordNet {
                     String str = obj.sap(tokens[0], tokens[1]);
                     int dis = obj.distance(
                         tokens[0], tokens[1]);
-                    System.out.println("distance = " + dis +
-                        ", ancestor = " + str);
+                    System.out.println("distance = " + dis
+                        + ", ancestor = " + str);
                 }
             }
         } catch (Exception e) {

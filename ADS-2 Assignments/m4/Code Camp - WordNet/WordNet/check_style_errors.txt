@@ -1,15 +1,7 @@
 Starting audit...
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:2:8: Unused import - java.util.Arrays. [UnusedImports]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:32:13: Variable 'flag' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:38: Line is longer than 80 characters (found 83). [LineLength]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:38:73: Expected @throws tag for 'Exception'. [JavadocMethod]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:54: Line is longer than 80 characters (found 88). [LineLength]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:70:8: Unused @param tag for 'g'. [JavadocMethod]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:72:40: Expected @param tag for 'g1'. [JavadocMethod]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:82:8: Unused @param tag for 'g'. [JavadocMethod]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:84:48: Expected @param tag for 'g2'. [JavadocMethod]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:102:26: Parameter synsets should be final. [FinalParameters]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:182:34: Expression can be simplified. [SimplifyBooleanExpression]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:191: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:104:26: Parameter synsets should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:184:34: Expression can be simplified. [SimplifyBooleanExpression]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:193:60: '+' should be on a new line. [OperatorWrap]
 Audit done.
-Checkstyle ends with 12 errors.
+Checkstyle ends with 4 errors.

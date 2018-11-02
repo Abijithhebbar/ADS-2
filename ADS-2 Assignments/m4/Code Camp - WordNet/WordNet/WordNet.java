@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.io.File;
 /**
@@ -29,13 +28,15 @@ public class WordNet {
     /**.
     boolean type variable.
     */
-    boolean flag = false;
+    private boolean flag = false;
     /**
      * Constructor is used to construct the object.
      * @param synsets String.
      * @param hypernyms String.
+     * @throws Exception for null.
      */
-    public WordNet(final String synsets, final String hypernyms) throws Exception {
+    public WordNet(final String synsets,
+     final String hypernyms) throws Exception {
         buildht(synsets);
         buildg(hypernyms);
     }
@@ -51,7 +52,8 @@ public class WordNet {
             String[] tokens = sc.nextLine().split(",");
             if (tokens.length > 1) {
                 for (int i = 1; i < tokens.length; i++) {
-                    g.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[i]));
+                    g.addEdge(Integer.parseInt(tokens[0]),
+                     Integer.parseInt(tokens[i]));
                 }
             }
         }
@@ -67,7 +69,7 @@ public class WordNet {
     }
     /**
      * To check if there is a cycle.
-     * @param g Digraph object.
+     * @param g1 Digraph object.
      */
     private void iscycle(final Digraph g1) {
         DirectedCycle obj = new DirectedCycle(g1);
@@ -79,7 +81,7 @@ public class WordNet {
     }
     /**
      * To check if the digraph is rooted.
-     * @param g Digraph object.
+     * @param g2 Digraph object.
      */
     private void isrooteddigraph(final Digraph g2) {
         int count = 0;
@@ -188,7 +190,8 @@ public class WordNet {
                     String str = obj.sap(tokens[0], tokens[1]);
                     int dis = obj.distance(
                         tokens[0], tokens[1]);
-                    System.out.println("distance = " + dis + ", ancestor = " + str);
+                    System.out.println("distance = " + dis +
+                        ", ancestor = " + str);
                 }
             }
         } catch (Exception e) {

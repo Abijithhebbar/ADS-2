@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.io.File;
 /**
  * WordNet class.
  **/
@@ -7,20 +9,23 @@ public class WordNet {
     /**
      * Digraph object.
      */
-    Digraph g;
+    private Digraph g;
     /**
      * LinearprobinghashST object creation.
      */
-    LinearProbingHashST<String, ArrayList<Integer>> ht;
+    private LinearProbingHashST<String, ArrayList<Integer>> ht;
     /**
      * LinearprobinghashST object creation.
      */
-    LinearProbingHashST<Integer, String> ht1;
-    int v;
+    private LinearProbingHashST<Integer, String> ht1;
+    /**
+     * Integer v.
+     */
+    private int v;
     /**
      * SAP object.
      */
-    SAP sap;
+    private SAP sap;
     /**.
     boolean type variable.
     */
@@ -30,15 +35,16 @@ public class WordNet {
      * @param synsets String.
      * @param hypernyms String.
      */
-    public WordNet(String synsets, String hypernyms) throws Exception {
+    public WordNet(final String synsets, final String hypernyms) throws Exception {
         buildht(synsets);
         buildg(hypernyms);
     }
 /**
  * to build a digraph.
  * @param hypernyms String type.
+ * @throws Exception if input is null.
  */
-    private void buildg(String hypernyms)throws Exception {
+    private void buildg(final String hypernyms)throws Exception {
         g = new Digraph(v);
         Scanner sc = new Scanner(new File(hypernyms));
         while (sc.hasNextLine()) {
@@ -63,11 +69,11 @@ public class WordNet {
      * To check if there is a cycle.
      * @param g Digraph object.
      */
-    private void iscycle(Digraph g) {
-        DirectedCycle obj = new DirectedCycle(g);
+    private void iscycle(final Digraph g1) {
+        DirectedCycle obj = new DirectedCycle(g1);
         if (obj.hasCycle()) {
             System.out.println("Cycle detected");
-            flag = true ;
+            flag = true;
             return;
         }
     }
@@ -75,15 +81,15 @@ public class WordNet {
      * To check if the digraph is rooted.
      * @param g Digraph object.
      */
-    private void isrooteddigraph(Digraph g) {
+    private void isrooteddigraph(final Digraph g2) {
         int count = 0;
-        for (int i = 0; i < g.V(); i++) {
-            if (g.outdegree(i) == 0) {
+        for (int i = 0; i < g2.V(); i++) {
+            if (g2.outdegree(i) == 0) {
                 count++;
             }
             if (count > 1) {
                 System.out.println("Multiple roots");
-                flag = true ;
+                flag = true;
                 return;
             }
         }
@@ -91,6 +97,7 @@ public class WordNet {
 /**
  * Used to build the hash table.
  * @param synsets String.
+ * @throws Exception for null.
  */
     private void buildht(String synsets)throws Exception {
         ht = new LinearProbingHashST<String, ArrayList<Integer>>();
@@ -115,8 +122,10 @@ public class WordNet {
             v++;
         }
     }
-
-    // returns all WordNet nouns
+/**
+* Iterable object.
+ * @return iterable.
+ */
     public Iterable<String> nouns() {
         return null;
     }
@@ -126,7 +135,7 @@ public class WordNet {
      * @param word String type.
      * @return boolean.
      */
-    public boolean isNoun(String word) {
+    public boolean isNoun(final String word) {
         return false;
     }
 /**
@@ -135,7 +144,7 @@ public class WordNet {
  * @param nounB String Type.
  * @return distance.
  */
-    public int distance(String nounA, String nounB) {
+    public int distance(final String nounA, final String nounB) {
         sap = new SAP(g);
         int dist = sap.length(ht.get(nounA), ht.get(nounB));
         return dist;
@@ -146,7 +155,7 @@ public class WordNet {
      * @param nounB String type.
      * @return String.
      */
-    public String sap(String nounA, String nounB) {
+    public String sap(final String nounA, final String nounB) {
         sap = new SAP(g);
         String str = "";
         int id = sap.ancestor(ht.get(nounA), ht.get(nounB));
@@ -162,7 +171,7 @@ public class WordNet {
  * Main method.
  * @param args String type.
  */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String file1 = "Files" + "\\" + sc.nextLine();
         String file2 = "Files" + "\\" + sc.nextLine();
@@ -170,17 +179,20 @@ public class WordNet {
         try {
             WordNet obj = new WordNet(file1, file2);
             if (input.equals("Graph")) {
-                if (obj.isflag() == false) obj.print();
+                if (obj.isflag() == false) {
+                    obj.print();
+                }
             } else if (input.equals("Queries")) {
                 while (sc.hasNextLine()) {
                     String[] tokens = sc.nextLine().split(" ");
                     String str = obj.sap(tokens[0], tokens[1]);
-                    int dis = obj.distance(tokens[0], tokens[1]);
+                    int dis = obj.distance(
+                        tokens[0], tokens[1]);
                     System.out.println("distance = " + dis + ", ancestor = " + str);
                 }
             }
         } catch (Exception e) {
-            System.out.println("IllegalArgumentException");;
+            System.out.println("IllegalArgumentException");
         }
 
     }

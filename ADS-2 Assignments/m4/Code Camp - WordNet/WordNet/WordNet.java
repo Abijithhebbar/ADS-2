@@ -178,10 +178,11 @@ public class WordNet {
         String file1 = "Files" + "\\" + sc.nextLine();
         String file2 = "Files" + "\\" + sc.nextLine();
         String input = sc.nextLine();
+        boolean f = false;
         try {
             WordNet obj = new WordNet(file1, file2);
             if (input.equals("Graph")) {
-                if (obj.isflag() == false) {
+                if (obj.isflag() == f) {
                     obj.print();
                 }
             } else if (input.equals("Queries")) {

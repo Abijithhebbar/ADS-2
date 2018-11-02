@@ -1,28 +1,3 @@
-/**
- *  The {@code DirectedCycle} class represents a data type for
- *  determining whether a digraph has a directed cycle.
- *  The <em>hasCycle</em> operation determines whether the digraph has
- *  a simple directed cycle and, if so, the <em>cycle</em> operation
- *  returns one.
- *  <p>
- *  This implementation uses depth-first search.
- *  The constructor takes time proportional to <em>V</em> + <em>E</em>
- *  (in the worst case),
- *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
- *  Afterwards, the <em>hasCycle</em> operation takes constant time;
- *  the <em>cycle</em> operation takes time proportional
- *  to the length of the cycle.
- *  <p>
- *  See {@link Topological} to compute a topological order if the
- *  digraph is acyclic.
- *  <p>
- *  For additional documentation,
- *  see <a href="https://algs4.cs.princeton.edu/42digraph">Section 4.2</a> of
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
- */
 public class DirectedCycle {
     private boolean[] marked;        // marked[v] = has vertex v been marked?
     private int[] edgeTo;            // edgeTo[v] = previous vertex on path to v
@@ -107,6 +82,30 @@ public class DirectedCycle {
 
 
         return true;
+    }
+
+    /**
+     * Unit tests the {@code DirectedCycle} data type.
+     *
+     * @param args the command-line arguments
+     */
+    public static void main(String[] args) {
+        // In in = new In(args[0]);
+        // Digraph G = new Digraph(in);
+
+        // DirectedCycle finder = new DirectedCycle(G);
+        // if (finder.hasCycle()) {
+        //     StdOut.print("Directed cycle: ");
+        //     for (int v : finder.cycle()) {
+        //         StdOut.print(v + " ");
+        //     }
+        //     StdOut.println();
+        // }
+
+        // else {
+        //     StdOut.println("No directed cycle");
+        // }
+        // StdOut.println();
     }
 
 }

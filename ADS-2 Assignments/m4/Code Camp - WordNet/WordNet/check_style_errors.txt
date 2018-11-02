@@ -1,0 +1,19 @@
+Starting audit...
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:1:8: Unused import - java.util.Arrays. [UnusedImports]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:2: Missing a Javadoc comment. [JavadocType]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:5:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:5:20: Parameter synsets should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:5:36: Parameter hypernyms should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:25: Line is longer than 80 characters (found 95). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:31:5: Class 'WordNet' looks like designed for extension (can be subclassed), but the method 'readSynsetFile' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'WordNet' final or making the method 'readSynsetFile' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:31:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:31:32: Parameter filename should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:31:49: Parameter hypernyms should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:45:5: Class 'WordNet' looks like designed for extension (can be subclassed), but the method 'readHypernymFile' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'WordNet' final or making the method 'readHypernymFile' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:45:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:45:34: Parameter filename should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:45:51: Parameter digraph should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m4\Code Camp - WordNet\WordNet\WordNet.java:50: Line is longer than 80 characters (found 86). [LineLength]
+Audit done.
+Checkstyle ends with 16 errors.

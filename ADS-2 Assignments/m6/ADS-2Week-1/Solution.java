@@ -18,11 +18,26 @@ class PageRank {
 		digraph = new Digraph(g);
 		int vertex = digraph.V();
 		int edge = digraph.E();
+		Stack stack = new Stack();
 		double prnum = 0;
 		System.out.println(vertex + " vertices, " + edge + " edges");
+		// System.out.println();
 		for (int i = 0; i < vertex; i++) {
-			System.out.println(i + ":" + digraph.adj(i));
+			stack.push(digraph.adj(i));
+			System.out.print(i + ":");
+			for (int j = 0; j < stack.size(); j++) {
+				System.out.print(" " +stack.pop());
+			}
+			System.out.println();
+			//System.out.println(i + ":" + digraph.adj(i));
 		}
+		System.out.println();
+		for (int k = 0; k < vertex; k++) {
+		outdegree = digraph.outdegree(k);
+		indegree = digraph.indegree(k);
+		System.out.println(k + " - " + outdegree/indegree);
+		}
+
 	// 	for (int i = 0; i < vertex; i++) {
 	// 		// int[] branches = new int[10];
 	// 		// branches = digraph.adj(i);

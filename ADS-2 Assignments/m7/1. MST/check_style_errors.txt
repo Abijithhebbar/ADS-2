@@ -1,11 +1,4 @@
 Starting audit...
 [ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:4: Class UF should be declared as final. [FinalClass]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:28: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:47:21: Parameter p should be final. [FinalParameters]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:93: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:96: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:97: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:112:61: '+' should be on a new line. [OperatorWrap]
 Audit done.
-Checkstyle ends with 8 errors.
+Checkstyle ends with 1 errors.

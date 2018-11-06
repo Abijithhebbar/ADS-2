@@ -46,7 +46,7 @@ final class UF {
      * containing site {@code p}
      * @throws IllegalArgumentException unless {@code 0 <= p < n}
      */
-    public int find(final int p) {
+    public int find(int p) {
         validate(p);
         while (p != parent[p]) {
             parent[p] = parent[parent[p]];    // path compression by halving

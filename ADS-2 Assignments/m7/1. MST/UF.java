@@ -1,4 +1,4 @@
-/**
+﻿/**
  Union Find class.
  */
 final class UF {

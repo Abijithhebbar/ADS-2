@@ -25,6 +25,13 @@ public class Solution {
 			// First is the source and second is the destination.
 			// If the path exists print the distance between them.
 			// Other wise print "No Path Found."
+			String[] inp = sc.nextLine().split(" ");
+			DijkstraUndirectedSP shortpath = new DijkstraUndirectedSP(weightedgraph, Integer.parseInt(inp[0]));
+			if (shortpath.hasPathTo(Integer.parseInt(inp[1]))) {
+        System.out.println(shortpath.distTo(Integer.parseInt(inp[1])));
+      } else {
+        System.out.println("No Path Found.");
+      }
 			break;
 
 		case "ViaPaths":

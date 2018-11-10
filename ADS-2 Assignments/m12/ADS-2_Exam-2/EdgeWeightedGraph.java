@@ -1,101 +1,45 @@
-import java.util.*;
+/**
+ * Class for edge weighted graph.
+ */
 public class EdgeWeightedGraph {
-    private static final String NEWLINE = System.getProperty("line.separator");
-
-    private final int V;
-    private int E;
+    /**
+     * {Vertices}.
+     */
+    private int vertices;
+    /**
+     * {Edges}.
+     */
+    private int edges;
+    /**
+     * { item_description }.
+     */
+    private String newLine = System.getProperty("line.separator");
+    /**
+     * {Bag array of type Edge}.
+     */
     private Bag<Edge>[] adj;
 
     /**
-     * Initializes an empty edge-weighted graph with {@code V} vertices and 0 edges.
-     *
-     * @param  V the number of vertices
-     * @throws IllegalArgumentException if {@code V < 0}
+     * Initializes an empty edge-weighted graph with {@code v}
+     * vertices and 0 edges.
+     * @param  v the number of vertices
+     * @throws IllegalArgumentException if {@code v < 0}
      */
-    public EdgeWeightedGraph(int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of vertices must be nonnegative");
-        this.V = V;
-        this.E = 0;
-        adj = (Bag<Edge>[]) new Bag[V];
-        for (int v = 0; v < V; v++) {
-            adj[v] = new Bag<Edge>();
+    public EdgeWeightedGraph(final int v) {
+        this.vertices = v;
+        this.edges = 0;
+        adj = (Bag<Edge>[]) new Bag[v];
+        for (int i = 0; i < v; i++) {
+            adj[i] = new Bag<Edge>();
         }
     }
-
-    /**
-     * Initializes a random edge-weighted graph with {@code V} vertices and <em>E</em> edges.
-     *
-     * @param  V the number of vertices
-     * @param  E the number of edges
-     * @throws IllegalArgumentException if {@code V < 0}
-     * @throws IllegalArgumentException if {@code E < 0}
-     */
-    // public EdgeWeightedGraph(int V, int E) {
-    //     this(V);
-    //     if (E < 0) throw new IllegalArgumentException("Number of edges must be nonnegative");
-    //     for (int i = 0; i < E; i++) {
-    //         int v = StdRandom.uniform(V);
-    //         int w = StdRandom.uniform(V);
-    //         double weight = Math.round(100 * StdRandom.uniform()) / 100.0;
-    //         Edge e = new Edge(v, w, weight);
-    //         addEdge(e);
-    //     }
-    // }
-
-    /**
-     * Initializes an edge-weighted graph from an input stream.
-     * The format is the number of vertices <em>V</em>,
-     * followed by the number of edges <em>E</em>,
-     * followed by <em>E</em> pairs of vertices and edge weights,
-     * with each entry separated by whitespace.
-     *
-     * @param  in the input stream
-     * @throws IllegalArgumentException if the endpoints of any edge are not in prescribed range
-     * @throws IllegalArgumentException if the number of vertices or edges is negative
-     */
-    // public EdgeWeightedGraph(In in) {
-    //     this(in.readInt());
-    //     int E = in.readInt();
-    //     if (E < 0) throw new IllegalArgumentException("Number of edges must be nonnegative");
-    //     for (int i = 0; i < E; i++) {
-    //         int v = in.readInt();
-    //         int w = in.readInt();
-    //         validateVertex(v);
-    //         validateVertex(w);
-    //         double weight = in.readDouble();
-    //         Edge e = new Edge(v, w, weight);
-    //         addEdge(e);
-    //     }
-    // }
-
-    /**
-     * Initializes a new edge-weighted graph that is a deep copy of {@code G}.
-     *
-     * @param  G the edge-weighted graph to copy
-     */
-    public EdgeWeightedGraph(EdgeWeightedGraph G) {
-        this(G.V());
-        this.E = G.E();
-        for (int v = 0; v < G.V(); v++) {
-            // reverse so that adjacency list is in same order as original
-            Stack<Edge> reverse = new Stack<Edge>();
-            for (Edge e : G.adj[v]) {
-                reverse.push(e);
-            }
-            for (Edge e : reverse) {
-                adj[v].add(e);
-            }
-        }
-    }
-
-
     /**
      * Returns the number of vertices in this edge-weighted graph.
      *
      * @return the number of vertices in this edge-weighted graph
      */
-    public int V() {
-        return V;
+    public int vertices() {
+        return this.vertices;
     }
 
     /**
@@ -103,41 +47,30 @@ public class EdgeWeightedGraph {
      *
      * @return the number of edges in this edge-weighted graph
      */
-    public int E() {
-        return E;
-    }
-
-    // throw an IllegalArgumentException unless {@code 0 <= v < V}
-    private void validateVertex(int v) {
-        if (v < 0 || v >= V)
-            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+    public int edge() {
+        return this.edges;
     }
 
     /**
      * Adds the undirected edge {@code e} to this edge-weighted graph.
      *
      * @param  e the edge
-     * @throws IllegalArgumentException unless both endpoints are between {@code 0} and {@code V-1}
      */
-    public void addEdge(Edge e) {
+    public void addEdge(final Edge e) {
         int v = e.either();
         int w = e.other(v);
-        validateVertex(v);
-        validateVertex(w);
         adj[v].add(e);
         adj[w].add(e);
-        E++;
+        edges++;
     }
 
     /**
      * Returns the edges incident on vertex {@code v}.
      *
      * @param  v the vertex
-     * @return the edges incident on vertex {@code v} as an Iterable
-     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     * @return the edges incident on vertex {@code v}
      */
-    public Iterable<Edge> adj(int v) {
-        validateVertex(v);
+    public Iterable<Edge> adj(final int v) {
         return adj[v];
     }
 
@@ -146,75 +79,48 @@ public class EdgeWeightedGraph {
      *
      * @param  v the vertex
      * @return the degree of vertex {@code v}
-     * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
-    public int degree(int v) {
-        validateVertex(v);
+    public int degree(final int v) {
         return adj[v].size();
     }
 
     /**
      * Returns all edges in this edge-weighted graph.
-     * To iterate over the edges in this edge-weighted graph, use foreach notation:
-     * {@code for (Edge e : G.edges())}.
      *
      * @return all edges in this edge-weighted graph, as an iterable
      */
     public Iterable<Edge> edges() {
         Bag<Edge> list = new Bag<Edge>();
-        for (int v = 0; v < V; v++) {
+        for (int j = 0; j < vertices; j++) {
             int selfLoops = 0;
-            for (Edge e : adj(v)) {
-                if (e.other(v) > v) {
+            for (Edge e : adj(j)) {
+                if (e.other(j) > j) {
                     list.add(e);
-                }
-                // add only one copy of each self loop (self loops will be consecutive)
-                else if (e.other(v) == v) {
-                    if (selfLoops % 2 == 0) list.add(e);
+                } else if (e.other(j) == j) {
+                    if (selfLoops % 2 == 0) {
+                        list.add(e);
+                    }
                     selfLoops++;
                 }
             }
         }
         return list;
     }
-
     /**
-     * Returns a string representation of the edge-weighted graph.
-     * This method takes time proportional to <em>E</em> + <em>V</em>.
+     * Returns a string representation of the object.
      *
-     * @return the number of vertices <em>V</em>, followed by the number of edges <em>E</em>,
-     *         followed by the <em>V</em> adjacency lists of edges
+     * @return     String representation of the object.
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(V + " " + "vertices" + " " + E + " " + "edges" + NEWLINE);
-        for (int v = 0; v < V; v++) {
+        s.append(vertices + " vertices " + edges + " edges" + newLine);
+        for (int v = 0; v < vertices; v++) {
             s.append(v + ": ");
             for (Edge e : adj[v]) {
                 s.append(e + "  ");
             }
-            s.append(NEWLINE);
+            s.append(newLine);
         }
-        return s.toString();
+        return s.toString() + "\n";
     }
-
-    /**
-     * Unit tests the {@code EdgeWeightedGraph} data type.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-        // In in = new In(args[0]);
-        // EdgeWeightedGraph G = new EdgeWeightedGraph(in);
-        // System.out.println(G);
-        Scanner in = new Scanner(System.in);
-        int vert = in.nextInt();
-        EdgeWeightedGraph G = new EdgeWeightedGraph(vert);
-        for (int i = 0; i < vert; i++) {
-            String[] s = in.nextLine().split(" ");
-
-        }
-        System.out.println(G);
-    }
-
 }

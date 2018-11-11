@@ -1,7 +1,20 @@
 import java.util.Scanner;
 import java.util.Arrays;
-class Solution {
-	public static void main(String args[]) {
+/**
+ * Solution class.
+ **/
+final class Solution {
+	/**
+	 * default constructor.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * Main method.
+	 * @param args String.
+	 */
+	public static void main(final String args[]) {
 		Scanner in = new Scanner(System.in);
 		int vert = Integer.parseInt(in.nextLine());
 		int testcases = Integer.parseInt(in.nextLine());

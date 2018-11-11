@@ -1,2 +1,16 @@
 Starting audit...
-Checkstyle ends with 1 errors.
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:12: Line is longer than 80 characters (found 88). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:26:5: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:27: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:38: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:41: Line is longer than 80 characters (found 83). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:67: Line is longer than 80 characters (found 95). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:88: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:91: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:92: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:106: Line is longer than 80 characters (found 96). [LineLength]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:106:92: '-' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m7\1. MST\UF.java:106:93: '-' is not followed by whitespace. [WhitespaceAround]
+Audit done.
+Checkstyle ends with 13 errors.

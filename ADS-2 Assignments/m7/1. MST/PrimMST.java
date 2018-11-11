@@ -11,18 +11,18 @@ class PrimMST {
      * @param G the edge-weighted graph
      */
     public PrimMST(EdgeWeightedGraph G) {
-        edgeTo = new Edge[G.V()];
-        distTo = new double[G.V()];
-        marked = new boolean[G.V()];
-        pq = new IndexMinPQ<Double>(G.V());
-        for (int v = 0; v < G.V(); v++)
+        edgeTo = new Edge[G.vert()];
+        distTo = new double[G.vert()];
+        marked = new boolean[G.vert()];
+        pq = new IndexMinPQ<Double>(G.vert());
+        for (int v = 0; v < G.vert(); v++)
             distTo[v] = Double.POSITIVE_INFINITY;
 
-        for (int v = 0; v < G.V(); v++)      // run from each vertex to find
+        for (int v = 0; v < G.vert(); v++)      // run from each vertex to find
             if (!marked[v]) prim(G, v);      // minimum spanning forest
 
         // check optimality conditions
-        assert check(G);
+        // assert check(G);
     }
 
     // run Prim's algorithm in graph G, starting from vertex s
@@ -74,7 +74,7 @@ class PrimMST {
         double weight = 0.0;
         for (Edge e : edges())
             weight += e.weight();
-        return weight/1.0000;
+        return weight / 1.0000;
     }
 
 
@@ -92,7 +92,7 @@ class PrimMST {
         }
 
         // check that it is acyclic
-        UF uf = new UF(G.V());
+        UF uf = new UF(G.vert());
         for (Edge e : edges()) {
             int v = e.either(), w = e.other(v);
             if (uf.connected(v, w)) {
@@ -115,10 +115,12 @@ class PrimMST {
         for (Edge e : edges()) {
 
             // all edges in MST except e
-            uf = new UF(G.V());
+            uf = new UF(G.vert());
             for (Edge f : edges()) {
                 int x = f.either(), y = f.other(x);
-                if (f != e) uf.union(x, y);
+                if (f != e) {
+                    uf.union(x, y);
+                }
             }
 
             // check that e is min weight edge in crossing cut
@@ -126,7 +128,8 @@ class PrimMST {
                 int x = f.either(), y = f.other(x);
                 if (!uf.connected(x, y)) {
                     if (f.weight() < e.weight()) {
-                        System.err.println("Edge " + f + " violates cut optimality conditions");
+                        System.err.println(
+                            "Edge " + f + " violates cut optimality conditions");
                         return false;
                     }
                 }
@@ -136,21 +139,4 @@ class PrimMST {
 
         return true;
     }
-
-    /**
-     * Unit tests the {@code PrimMST} data type.
-     *
-     * @param args the command-line arguments
-     */
-    // public static void main(String[] args) {
-    //     In in = new In(args[0]);
-    //     EdgeWeightedGraph G = new EdgeWeightedGraph(in);
-    //     PrimMST mst = new PrimMST(G);
-    //     for (Edge e : mst.edges()) {
-    //         StdOut.println(e);
-    //     }
-    //     StdOut.printf("%.5f\n", mst.weight());
-    // }
-
-
 }

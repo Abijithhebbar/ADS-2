@@ -21,10 +21,11 @@ final class Solution {
 		EdgeWeightedGraph wtEdge = new EdgeWeightedGraph(vert);
 		for (int i = 0; i < testcases; i++) {
 			String[] inp = in.nextLine().split(" ");
-			wtEdge.addEdge(new Edge(Integer.parseInt(inp[0]), Integer.parseInt(inp[1]), Double.valueOf(inp[2])));
+			wtEdge.addEdge(new Edge(Integer.parseInt(inp[0]),
+				Integer.parseInt(inp[1]), Double.valueOf(inp[2])));
 		}
 		PrimMST p =  new PrimMST(wtEdge);
 		// System.out.println(p.edges());
-		System.out.format("%.5f",p.weight());
+		System.out.format("%.5f", p.weight());
 	}
 }

@@ -39,15 +39,17 @@ final class Solution {
     public static void printSeam(final SeamCarver carver,
      final int[] seam, final boolean direction) {
         double totalSeamEnergy = 0.0;
+        boolean t = true;
+        boolean f = false;
 
         for (int row = 0; row < carver.height(); row++) {
             for (int col = 0; col < carver.width(); col++) {
                 double energy = carver.energy(col, row);
                 String marker = " ";
-                if ((direction == true && row == seam[col])) {
+                if ((direction == t && row == seam[col])) {
                     marker = "*";
                     totalSeamEnergy += energy;
-                } else if ((direction == false   && col == seam[row])) {
+                } else if ((direction == f   && col == seam[row])) {
                     marker = "*";
                     totalSeamEnergy += energy;
                 }

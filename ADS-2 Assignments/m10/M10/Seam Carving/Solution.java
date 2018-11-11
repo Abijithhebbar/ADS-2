@@ -16,17 +16,17 @@ final class Solution {
      **/
     public static void printEnergies(final String fileName) {
         Picture picture = new Picture(fileName);
-        StdOut.printf("image is %d pixels wide by %d pixels high.\n",
+        System.out.printf("image is %d pixels wide by %d pixels high.\n",
          picture.width(), picture.height());
 
         SeamCarver sc = new SeamCarver(picture);
 
-        StdOut.printf("Printing energy calculated for each pixel.\n");
+        System.out.printf("Printing energy calculated for each pixel.\n");
 
         for (int row = 0; row < sc.height(); row++) {
             for (int col = 0; col < sc.width(); col++)
-                StdOut.printf("%9.0f ", sc.energy(col, row));
-            StdOut.println();
+                System.out.printf("%9.0f ", sc.energy(col, row));
+            System.out.println();
         }
     }
     /**
@@ -48,13 +48,13 @@ final class Solution {
                     marker = "*";
                     totalSeamEnergy += energy;
                 }
-                StdOut.printf("%7.2f%s ", energy, marker);
+                System.out.printf("%7.2f%s ", energy, marker);
             }
-            StdOut.println();
+            System.out.println();
         }
-        StdOut.printf("Total energy = %f\n", totalSeamEnergy);
-        StdOut.println();
-        StdOut.println();
+        System.out.printf("Total energy = %f\n", totalSeamEnergy);
+        System.out.println();
+        System.out.println();
     }
 /**
  * main method.

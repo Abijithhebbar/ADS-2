@@ -11,6 +11,7 @@ final class Solution {
     }
     /**
      * main method.
+     * Complexity is O(N).
      * @param args String.
      */
     public static void main(final String[] args) {

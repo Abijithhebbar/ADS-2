@@ -24,8 +24,8 @@ import java.util.Scanner;
  			len = inp[i].length();
  		}
  		len = inp[0].length();
- 		lsd.sort(inp, len);
- 		System.out.println(lsd);
+ 		// lsd.sort(inp, len);
+ 		System.out.println(lsd.sort(inp, len));
 
  	}
  }

@@ -25,7 +25,9 @@ import java.util.Scanner;
  		}
  		len = inp[0].length();
  		// lsd.sort(inp, len);
- 		System.out.println(lsd.sort(inp, len));
+ 		String[] result = new String[count];
+ 		result = lsd.sort(inp, len);
+ 		System.out.println(result.toString());
 
  	}
  }

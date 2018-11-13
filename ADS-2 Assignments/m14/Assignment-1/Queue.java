@@ -48,7 +48,7 @@ public class Queue<Item> implements Iterable<Item> {
 
   /**
    * Returns true if this queue is empty.
-   *
+   * Complexity is O(1).
    * @return {@code true} if this queue is empty; {@code false} otherwise
    */
   public boolean isEmpty() {
@@ -57,7 +57,7 @@ public class Queue<Item> implements Iterable<Item> {
 
   /**
    * Returns the number of items in this queue.
-   *
+   * complexity is O(1).
    * @return the number of items in this queue
    */
   public int size() {
@@ -80,7 +80,7 @@ public class Queue<Item> implements Iterable<Item> {
 
   /**
    * Adds the item to this queue.
-   *
+   * Complexity is O(1).
    * @param  item the item to add
    */
   public void enqueue(final Item item) {
@@ -98,7 +98,7 @@ public class Queue<Item> implements Iterable<Item> {
 
   /**
    * Removes and returns the item on this queue that was least recently added.
-   *
+   * Complexity is O(1).
    * @return the item on this queue that was least recently added
    * @throws NoSuchElementException if this queue is empty
    */
@@ -117,7 +117,8 @@ public class Queue<Item> implements Iterable<Item> {
 
   /**
    * Returns a string representation of this queue.
-   *
+   * Complexity is O(N).
+   * Where N is length of the queue.
    * @return the sequence of items in FIFO order, separated by spaces
    */
   public String toString() {
@@ -132,7 +133,8 @@ public class Queue<Item> implements Iterable<Item> {
   /**
    * Returns an iterator that iterates over
    * the items in this queue in FIFO order.
-   *
+   * Complexity is O(N).
+   * Where N is length of the queue.
    * @return an iterator that iterates over
    * the items in this queue in FIFO order
    */
@@ -144,7 +146,8 @@ public class Queue<Item> implements Iterable<Item> {
 
   /**
    * Class for list iterator.
-   *
+   * Complexity is O(N).
+   * Where N is length of the queue.
    * @param      <Item>  The item
    */
   private class ListIterator<Item> implements Iterator<Item> {
@@ -155,7 +158,8 @@ public class Queue<Item> implements Iterable<Item> {
 
     /**
      * Constructs the object.
-     *
+     * Complexity is O(N).
+     * Where N is length of the queue.
      * @param      f  The first
      */
     ListIterator(final Node<Item> f) {
@@ -164,7 +168,7 @@ public class Queue<Item> implements Iterable<Item> {
 
     /**
      * Determines if it has next.
-     *
+     * Complexity is O(1).
      * @return     True if has next, False otherwise.
      */
     public boolean hasNext()  {
@@ -172,6 +176,7 @@ public class Queue<Item> implements Iterable<Item> {
     }
     /**
      * remove.
+     * Complexity is O(1).
      */
     public void remove() {
       throw new UnsupportedOperationException();
@@ -179,7 +184,7 @@ public class Queue<Item> implements Iterable<Item> {
 
     /**
      * Next.
-     *
+     * Complexity is O(1).
      * @return     { description_of_the_return_value }
      */
     public Item next() {

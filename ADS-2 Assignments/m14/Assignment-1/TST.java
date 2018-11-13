@@ -50,6 +50,7 @@ public class TST<Value> {
     }
 
     /**
+     * Complexity is O(1).
      * Does this symbol table contain the given key?
      * @param key the key
      * @return {@code true} if this symbol table contains {@code key} and
@@ -65,6 +66,8 @@ public class TST<Value> {
     }
 
     /**
+     * Complexity is O(M).
+     * Where M is the length of String.
      * Returns the value associated with the given key.
      * @param key the key
      * @return the value associated with the given key if the key
@@ -86,6 +89,8 @@ public class TST<Value> {
         return x.val;
     }
 /**
+ * Complexity is O(M).
+ * Where M is the length of String.
  * get method.
  * @param x Node.
  * @param key String.
@@ -113,6 +118,8 @@ public class TST<Value> {
     }
 
     /**
+     * Complexity is O(M).
+     * Where M is the length of String.
      * Inserts the key-value pair into the
      *  symbol table, overwriting the old value
      * with the new value if the key is already in the symbol table.
@@ -132,7 +139,11 @@ public class TST<Value> {
         root = put(root, key, val, 0);
     }
     /**
+     * Complexity is O(M).
+     * Where M is the length of String.
      * put method.
+     * Complexity is O(M).
+     * Where M is the length of String.
      * @param t node.
      * @param key String.
      * @param val Value.
@@ -160,6 +171,8 @@ public class TST<Value> {
     }
 
     /**
+     * Complexity is O(M).
+     * Where M is the length of String.
      * Returns the string in the symbol
      * table that is the longest prefix of {@code query},
      * or {@code null}, if no such string.
@@ -198,6 +211,8 @@ public class TST<Value> {
     }
 
     /**
+     * Complexity is O(M).
+     * Where M is the length of String.
      * Returns all keys in the symbol table as an {@code Iterable}.
      * To iterate over all of the keys in the symbol table named {@code st},
      * use the foreach notation: {@code for (Key key : st.keys())}.
@@ -210,6 +225,8 @@ public class TST<Value> {
     }
 
     /**
+     * Complexity is O(M).
+     * Where M is the length of String.
      * Returns all of the keys in the set that start with {@code prefix}.
      * @param prefix the prefix
      * @return all of the keys in the set that start with {@code prefix},
@@ -234,6 +251,8 @@ public class TST<Value> {
     }
     /**
      * collect method.
+     * Complexity is O(M).
+     * Where M is the length of String.
      * @param x Node.
      * @param prefix Stringbuilder.
      * @param queue Queue.
@@ -254,6 +273,8 @@ public class TST<Value> {
 
 
     /**
+     * Complexity is O(M).
+     * Where M is the length of String.
      * Returns all of the keys in the symbol table that match {@code pattern},
      * where . symbol is treated as a wildcard character.
      * @param pattern the pattern
@@ -267,6 +288,8 @@ public class TST<Value> {
     }
     /**
      * Collect method.
+     * Complexity is O(M).
+     * Where M is the length of String.
      * @param x Node type
      * @param prefix Stringbuilder.
      * @param i int.

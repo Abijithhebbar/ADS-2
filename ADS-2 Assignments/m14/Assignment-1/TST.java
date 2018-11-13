@@ -139,8 +139,9 @@ public class TST<Value> {
      * @param d int.
      * @return Node.
      */
-    private Node<Value> put(Node<Value> x, final String key,
+    private Node<Value> put(final Node<Value> t, final String key,
                             final Value val, final int d) {
+        Node<Value> x = t;
         char c = key.charAt(d);
         if (x == null) {
             x = new Node<Value>();

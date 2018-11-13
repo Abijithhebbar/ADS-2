@@ -1,4 +1,5 @@
 Starting audit...
-[ERROR] D:\ADS-2\ADS-2 Assignments\m14\Assignment-1\TST.java:142:29: Parameter x should be final. [FinalParameters]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m14\Assignment-1\TST.java:136:8: Unused @param tag for 'x'. [JavadocMethod]
+[ERROR] D:\ADS-2\ADS-2 Assignments\m14\Assignment-1\TST.java:142:47: Expected @param tag for 't'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 1 errors.
+Checkstyle ends with 2 errors.

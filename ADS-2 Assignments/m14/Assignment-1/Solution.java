@@ -1,7 +1,19 @@
-import java.util.*;
-
-public class Solution {
-	public static void main(String[] args) {
+import java.util.Scanner;
+/**
+ Solution class.
+ */
+final class Solution {
+	/**
+	 * default constructor.
+	 */
+	private Solution() {
+      //unused.
+	}
+	/**
+	 * main method.
+	 * @param args String.
+	 */
+	public static void main(final String[] args) {
 		String[] words = loadWords();
 		//Your code goes here...
 		// System.out.println(Arrays.toString(words));
@@ -17,7 +29,10 @@ public class Solution {
 		}
 		System.out.println(tst.keysWithPrefix(inp));
 	}
-
+/**
+ * loadwords method.
+ * @return String array.
+ */
 	public static String[] loadWords() {
 		In in = new In("/Files/dictionary-algs4.txt");
 		String[] words = in.readAllStrings();

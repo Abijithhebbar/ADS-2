@@ -133,7 +133,7 @@ public class TST<Value> {
     }
     /**
      * put method.
-     * @param x node.
+     * @param t node.
      * @param key String.
      * @param val Value.
      * @param d int.

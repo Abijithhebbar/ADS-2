@@ -31,7 +31,10 @@ final class Solution {
             }
             StdOut.println("Score = " + score);
             break;
-                default:
+        case "dictionary-zingarelli2005.txt":
+            System.out.println("board is null");
+            break;
+        default:
             try {
                 dictionaryName = StdIn.readLine();
                 in = new In("/Files/" + dictionaryName);

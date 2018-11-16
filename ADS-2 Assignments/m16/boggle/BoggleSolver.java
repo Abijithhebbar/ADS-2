@@ -35,14 +35,14 @@ Complexity is O(l) l is length of dictionary
 @param board the bogglebpard object
 Compelxity O(r*c) r:no: of rows, c: no: of cols
 */
-    public Iterable<String> getAllValidWords(BoggleBoard board) {
+    public ArrayList<String> getAllValidWords(BoggleBoard board) {
         this.board = board;
         this.map = new HashMap<>();
         this.list = new ArrayList<>();
         boolean[][] marked = new boolean[board.rows()][board.cols()];
         for (int i = 0; i < board.rows(); i++) {
             for (int j = 0; j < board.cols(); j++) {
-                verifyword(marked, "", i, j, 0);
+                check(marked, "", i, j, 0);
             }
         }
         return list;
@@ -56,7 +56,7 @@ Compelxity O(r*c) r:no: of rows, c: no: of cols
 Complexity O(1) : functional called for every cell once,
 steps are executed for that cell, no loops.
 */
-    private void verifyword(boolean[][] array, String prefix,
+    private void check(boolean[][] array, String prefix,
         int i,
         int j,
         int count) {
@@ -80,30 +80,30 @@ steps are executed for that cell, no loops.
         }
             if (temp || dict.hasKey(prefix)) {
             if (j - 1 >= 0 && !array[i][j - 1])
-                verifyword(array, prefix, i, j - 1, count);
+                check(array, prefix, i, j - 1, count);
             if (j + 1 < board.cols() && !array[i][j + 1])
-                verifyword(array, prefix, i, j + 1, count);
+                check(array, prefix, i, j + 1, count);
             if (i - 1 >= 0) {
                 if (j - 1 >= 0 && !array[i - 1][j - 1])
-                    verifyword(array, prefix, i - 1, j - 1, count);
+                    check(array, prefix, i - 1, j - 1, count);
                 if (!array[i - 1][j])
-                    verifyword(array, prefix, i - 1, j, count);
+                    check(array, prefix, i - 1, j, count);
                 if (j + 1 < board.cols() && !array[i - 1][j + 1])
-                    verifyword(array, prefix, i - 1, j + 1, count);
+                    check(array, prefix, i - 1, j + 1, count);
             }
             if (i + 1 < board.rows()) {
                 if (j - 1 >= 0 && !array[i + 1][j - 1])
-                    verifyword(array, prefix, i + 1, j - 1, count);
+                    check(array, prefix, i + 1, j - 1, count);
                 if (!array[i+1][j])
-                    verifyword(array, prefix, i + 1, j, count);
+                    check(array, prefix, i + 1, j, count);
                 if (j + 1 < board.cols() && !array[i + 1][j + 1])
-                    verifyword(array, prefix, i + 1, j + 1, count);
+                    check(array, prefix, i + 1, j + 1, count);
             }
         }
         array[i][j] = false;
     }
 /**.
-@param word the wrod for scoring
+@param word the word for scoring
 Complexity O(1) : score the word appropriately and return
 @return the return for word score
 */

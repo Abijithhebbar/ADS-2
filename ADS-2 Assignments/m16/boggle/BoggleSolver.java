@@ -113,7 +113,7 @@ Complexity O(1) : score the word appropriately and return
         if (word.length() == 3 || word.length() == 4)
             return 1;
         else if (word.length() == 5)
-            return 3;
+            return 2;
         else if (word.length() == 6)
             return 3;
         else if (word.length() == 7)

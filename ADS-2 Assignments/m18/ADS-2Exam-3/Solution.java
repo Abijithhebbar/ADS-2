@@ -88,8 +88,8 @@ public class Solution {
 	public static BinarySearchST<String, Integer> loadDictionary(String file) {
 		   BinarySearchST<String, Integer>  st
       = new BinarySearchST<String, Integer>();
-    String[] fileArray = toReadFile(file);
-    for (String word : fileArray) {
+    String[] files = toReadFile(file);
+    for (String word : files) {
       word = word.toLowerCase();
       if (!st.contains(word)) {
         st.put(word, 1);
@@ -104,15 +104,20 @@ public class Solution {
 
 
 class T9 {
-
+TST<Integer> tst;
 	public T9(BinarySearchST<String, Integer> st) {
 		// your code goes here
+		tst = new TST();
+		for (String word : st.keys()) {
+			tst.put(word, st.get(word));
+		}
+
 	}
 
 	// get all the prefixes that match with given prefix.
 	public Iterable<String> getAllWords(String prefix) {
 		// your code goes here
-		return null;
+		return tst.keysWithPrefix(prefix);
 	}
 
 	public Iterable<String> potentialWords(String t9Signature) {

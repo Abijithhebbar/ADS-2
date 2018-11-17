@@ -142,7 +142,7 @@ TST<Integer> tst;
 		 			}
 		 		}
 		 }
-		return null;
+		return out;
 	}
 
 	// final output

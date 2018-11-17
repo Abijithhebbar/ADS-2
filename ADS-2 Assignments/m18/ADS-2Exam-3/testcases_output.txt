@@ -162,8 +162,10 @@ is
 right
 words
 Your Output: 
-Exception in thread "main" java.lang.NullPointerException
-	at Solution.main(Solution.java:58)
+is
+right
+hello
+words
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 

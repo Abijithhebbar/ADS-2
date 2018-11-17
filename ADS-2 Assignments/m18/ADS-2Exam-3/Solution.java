@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.TreeSet;
 
 
 public class Solution {
@@ -129,7 +129,7 @@ TST<Integer> tst;
 	// return all possibilities(words), find top k with highest frequency.
 	public Iterable<String> getSuggestions(Iterable<String> words, int k) {
 		// your code goes here
-		ArrayList<String> out = new ArrayList<>();
+		TreeSet<String> out = new TreeSet<>();
 		MaxPQ<Integer> mpq = new MaxPQ<>();
 		 for (String eachword : words) {
 		 	mpq.insert(tst.get(eachword));

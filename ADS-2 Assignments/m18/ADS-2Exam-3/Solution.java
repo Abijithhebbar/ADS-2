@@ -86,23 +86,22 @@ public class Solution {
 	}
 
 	public static BinarySearchST<String, Integer> loadDictionary(String file) {
-		BinarySearchST<String, Integer>  st = new BinarySearchST<String, Integer>();
-		// your code goes here
-		int x = 1;
-		String[] input = toReadFile(file);
-		int len = input.length;
-		for (int i = 0; i < len; i++) {
-			if (!st.contains(input[i])) {
-				st.put(input[i], x);
-			} else {
-				st.put(input[i], x++);
-			}
-
-		}
-		return st;
-	}
+		   BinarySearchST<String, Integer>  st
+      = new BinarySearchST<String, Integer>();
+    String[] fileArray = toReadFile(file);
+    for (String word : fileArray) {
+      word = word.toLowerCase();
+      if (!st.contains(word)) {
+        st.put(word, 1);
+      } else {
+        st.put(word, st.get(word) + 1);
+      }
+    }
+    return st;
+  }
 
 }
+
 
 class T9 {
 

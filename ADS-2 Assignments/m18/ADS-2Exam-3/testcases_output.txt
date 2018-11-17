@@ -88,7 +88,7 @@ messages
 messagesome
 going
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 hello
 pizza
@@ -155,46 +155,47 @@ Your Output:
 hello
 pizza
 what
+sunday
 ball
 call
-calld
 involve
-involved
 finish
-finishd
+gone
+good
 home
-immed
 battery
+friends
 watches
+morning
+tonight
 shop
 phne
-qing
-rhode
-ring
-sing
 any
 bmw
-body
 box
 boy
 coz
 jay
 jaz
 kay
-lady
 law
 lay
 ammo
-dear
+das
 ear
 far
-gap
-gas
+send
+pocked
 pest
 rest
 woo
+paying
+saying
 james
+lands
 hates
+casting
+packing
 peeps
 bam
 bao
@@ -207,7 +208,11 @@ cat
 mines
 liver
 lives
+dime
+dine
+find
 fine
+seeking
 ----------------------------------------
 ########## Testcase 3: Passed ##########
 Expected Output: 

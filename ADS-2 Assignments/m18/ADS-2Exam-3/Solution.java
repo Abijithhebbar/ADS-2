@@ -130,9 +130,9 @@ TST<Integer> tst;
 			for (String letter: tokens) {
 				if (letter.equals("a") || letter.equals("b") || letter.equals("c")) {
 					check += "2";
-				} else if (letter.equals("e") || letter.equals("f") || letter.equals("g")) {
+				} else if (letter.equals("d") || letter.equals("e") || letter.equals("f")) {
 					check += "3";
-				} else if (letter.equals("h") || letter.equals("i") || letter.equals("i")) {
+				} else if (letter.equals("g") || letter.equals("h") || letter.equals("i")) {
 					check += "4";
 				} else if (letter.equals("j") || letter.equals("k") || letter.equals("l")) {
 					check += "5";

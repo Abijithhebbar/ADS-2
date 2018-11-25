@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 /**
- * solution class.
+ * sol class.
  **/
 final class Solution {
     /**
@@ -157,6 +157,3 @@ final class Solution {
         }
     }
 }
-
-
-

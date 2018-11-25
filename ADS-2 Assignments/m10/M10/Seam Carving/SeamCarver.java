@@ -298,3 +298,4 @@ public class SeamCarver {
         return true;
     }
 }
+

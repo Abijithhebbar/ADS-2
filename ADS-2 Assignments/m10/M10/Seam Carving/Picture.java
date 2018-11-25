@@ -89,15 +89,15 @@ public final class Picture implements ActionListener {
     private boolean isOriginUpperLeft = true;  // location of origin
     private final int width, height;           // width and height
 
-   /**
-     * Creates a {@code width}-by-{@code height} picture, with {@code width} columns
-     * and {@code height} rows, where each pixel is black.
-     *
-     * @param width the width of the picture
-     * @param height the height of the picture
-     * @throws IllegalArgumentException if {@code width} is negative
-     * @throws IllegalArgumentException if {@code height} is negative
-     */
+    /**
+      * Creates a {@code width}-by-{@code height} picture, with {@code width} columns
+      * and {@code height} rows, where each pixel is black.
+      *
+      * @param width the width of the picture
+      * @param height the height of the picture
+      * @throws IllegalArgumentException if {@code width} is negative
+      * @throws IllegalArgumentException if {@code height} is negative
+      */
     public Picture(int width, int height) {
         if (width  < 0) throw new IllegalArgumentException("width must be non-negative");
         if (height < 0) throw new IllegalArgumentException("height must be non-negative");
@@ -107,12 +107,12 @@ public final class Picture implements ActionListener {
         // set to TYPE_INT_ARGB here and in next constructor to support transparency
     }
 
-   /**
-     * Creates a new picture that is a deep copy of the argument picture.
-     *
-     * @param  picture the picture to copy
-     * @throws IllegalArgumentException if {@code picture} is {@code null}
-     */
+    /**
+      * Creates a new picture that is a deep copy of the argument picture.
+      *
+      * @param  picture the picture to copy
+      * @throws IllegalArgumentException if {@code picture} is {@code null}
+      */
     public Picture(Picture picture) {
         if (picture == null) throw new IllegalArgumentException("constructor argument is null");
 
@@ -126,13 +126,13 @@ public final class Picture implements ActionListener {
                 image.setRGB(col, row, picture.image.getRGB(col, row));
     }
 
-   /**
-     * Creates a picture by reading an image from a file or URL.
-     *
-     * @param  filename the name of the file (.png, .gif, or .jpg) or URL.
-     * @throws IllegalArgumentException if cannot read image
-     * @throws IllegalArgumentException if {@code filename} is {@code null}
-     */
+    /**
+      * Creates a picture by reading an image from a file or URL.
+      *
+      * @param  filename the name of the file (.png, .gif, or .jpg) or URL.
+      * @throws IllegalArgumentException if cannot read image
+      * @throws IllegalArgumentException if {@code filename} is {@code null}
+      */
     public Picture(String filename) {
         if (filename == null) throw new IllegalArgumentException("constructor argument is null");
 
@@ -159,26 +159,24 @@ public final class Picture implements ActionListener {
 
             width  = image.getWidth(null);
             height = image.getHeight(null);
-        }
-        catch (IOException ioe) {
+        } catch (IOException ioe) {
             throw new IllegalArgumentException("could not open image file: " + filename, ioe);
         }
     }
 
-   /**
-     * Creates a picture by reading the image from a PNG, GIF, or JPEG file.
-     *
-     * @param file the file
-     * @throws IllegalArgumentException if cannot read image
-     * @throws IllegalArgumentException if {@code file} is {@code null}
-     */
+    /**
+      * Creates a picture by reading the image from a PNG, GIF, or JPEG file.
+      *
+      * @param file the file
+      * @throws IllegalArgumentException if cannot read image
+      * @throws IllegalArgumentException if {@code file} is {@code null}
+      */
     public Picture(File file) {
         if (file == null) throw new IllegalArgumentException("constructor argument is null");
 
         try {
             image = ImageIO.read(file);
-        }
-        catch (IOException ioe) {
+        } catch (IOException ioe) {
             throw new IllegalArgumentException("could not open file: " + file, ioe);
         }
         if (image == null) {
@@ -189,38 +187,38 @@ public final class Picture implements ActionListener {
         filename = file.getName();
     }
 
-   /**
-     * Returns a {@link JLabel} containing this picture, for embedding in a {@link JPanel},
-     * {@link JFrame} or other GUI widget.
-     * Time complexity of O(1).
-     * @return the {@code JLabel}
-     */
+    /**
+      * Returns a {@link JLabel} containing this picture, for embedding in a {@link JPanel},
+      * {@link JFrame} or other GUI widget.
+      * Time complexity of O(1).
+      * @return the {@code JLabel}
+      */
     public JLabel getJLabel() {
         if (image == null) return null;         // no image available
         ImageIcon icon = new ImageIcon(image);
         return new JLabel(icon);
     }
 
-   /**
-    * Time complexity of O(1).
-     * Sets the origin to be the upper left pixel. This is the default.
-     */
+    /**
+     * Time complexity of O(1).
+      * Sets the origin to be the upper left pixel. This is the default.
+      */
     public void setOriginUpperLeft() {
         isOriginUpperLeft = true;
     }
 
-   /**
-    * Time complexity of O(1).
-     * Sets the origin to be the lower left pixel.
-     */
+    /**
+     * Time complexity of O(1).
+      * Sets the origin to be the lower left pixel.
+      */
     public void setOriginLowerLeft() {
         isOriginUpperLeft = false;
     }
 
-   /**
-    * Time complexity of O(1).
-     * Displays the picture in a window on the screen.
-     */
+    /**
+     * Time complexity of O(1).
+      * Displays the picture in a window on the screen.
+      */
     public void show() {
 
         // create the GUI for viewing the image if needed
@@ -254,20 +252,20 @@ public final class Picture implements ActionListener {
         frame.repaint();
     }
 
-   /**
-     * Returns the height of the picture.
-     * Time complexity of O(1).
-     * @return the height of the picture (in pixels)
-     */
+    /**
+      * Returns the height of the picture.
+      * Time complexity of O(1).
+      * @return the height of the picture (in pixels)
+      */
     public int height() {
         return height;
     }
 
-   /**
-     * Returns the width of the picture.
-     * Time complexity of O(1).
-     * @return the width of the picture (in pixels)
-     */
+    /**
+      * Returns the width of the picture.
+      * Time complexity of O(1).
+      * @return the width of the picture (in pixels)
+      */
     public int width() {
         return width;
     }
@@ -288,14 +286,14 @@ public final class Picture implements ActionListener {
             throw new IllegalArgumentException("column index must be between 0 and " + (width() - 1) + ": " + col);
     }
 
-   /**
-     * Returns the color of pixel ({@code col}, {@code row}) as a {@link java.awt.Color}.
-     * Time complexity of O(1).
-     * @param col the column index
-     * @param row the row index
-     * @return the color of pixel ({@code col}, {@code row})
-     * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
-     */
+    /**
+      * Returns the color of pixel ({@code col}, {@code row}) as a {@link java.awt.Color}.
+      * Time complexity of O(1).
+      * @param col the column index
+      * @param row the row index
+      * @return the color of pixel ({@code col}, {@code row})
+      * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+      */
     public Color get(int col, int row) {
         validateColumnIndex(col);
         validateRowIndex(row);
@@ -303,17 +301,17 @@ public final class Picture implements ActionListener {
         return new Color(rgb);
     }
 
-   /**
-    * Time complexity of O(1).
-     * Returns the color of pixel ({@code col}, {@code row}) as an {@code int}.
-     * Using this method can be more efficient than {@link #get(int, int)} because
-     * it does not create a {@code Color} object.
-     *
-     * @param col the column index
-     * @param row the row index
-     * @return the integer representation of the color of pixel ({@code col}, {@code row})
-     * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
-     */
+    /**
+     * Time complexity of O(1).
+      * Returns the color of pixel ({@code col}, {@code row}) as an {@code int}.
+      * Using this method can be more efficient than {@link #get(int, int)} because
+      * it does not create a {@code Color} object.
+      *
+      * @param col the column index
+      * @param row the row index
+      * @return the integer representation of the color of pixel ({@code col}, {@code row})
+      * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+      */
     public int getRGB(int col, int row) {
         validateColumnIndex(col);
         validateRowIndex(row);
@@ -321,16 +319,16 @@ public final class Picture implements ActionListener {
         else                   return image.getRGB(col, height - row - 1);
     }
 
-   /**
-    * Time complexity of O(1).
-     * Sets the color of pixel ({@code col}, {@code row}) to given color.
-     *
-     * @param col the column index
-     * @param row the row index
-     * @param color the color
-     * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
-     * @throws IllegalArgumentException if {@code color} is {@code null}
-     */
+    /**
+     * Time complexity of O(1).
+      * Sets the color of pixel ({@code col}, {@code row}) to given color.
+      *
+      * @param col the column index
+      * @param row the row index
+      * @param color the color
+      * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+      * @throws IllegalArgumentException if {@code color} is {@code null}
+      */
     public void set(int col, int row, Color color) {
         validateColumnIndex(col);
         validateRowIndex(row);
@@ -339,15 +337,15 @@ public final class Picture implements ActionListener {
         setRGB(col, row, rgb);
     }
 
-   /**
-    * Time complexity of O(1).
-     * Sets the color of pixel ({@code col}, {@code row}) to given color.
-     *
-     * @param col the column index
-     * @param row the row index
-     * @param rgb the integer representation of the color
-     * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
-     */
+    /**
+     * Time complexity of O(1).
+      * Sets the color of pixel ({@code col}, {@code row}) to given color.
+      *
+      * @param col the column index
+      * @param row the row index
+      * @param rgb the integer representation of the color
+      * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
+      */
     public void setRGB(int col, int row, int rgb) {
         validateColumnIndex(col);
         validateRowIndex(row);
@@ -355,14 +353,14 @@ public final class Picture implements ActionListener {
         else                   image.setRGB(col, height - row - 1, rgb);
     }
 
-   /**
-    * Time complexity of O(1).
-     * Returns true if this picture is equal to the argument picture.
-     *
-     * @param other the other picture
-     * @return {@code true} if this picture is the same dimension as {@code other}
-     *         and if all pixels have the same color; {@code false} otherwise
-     */
+    /**
+     * Time complexity of O(1).
+      * Returns true if this picture is equal to the argument picture.
+      *
+      * @param other the other picture
+      * @return {@code true} if this picture is the same dimension as {@code other}
+      *         and if all pixels have the same color; {@code false} otherwise
+      */
     public boolean equals(Object other) {
         if (other == this) return true;
         if (other == null) return false;
@@ -376,18 +374,18 @@ public final class Picture implements ActionListener {
         return true;
     }
 
-   /**
-    * Time complexity of O(row*col).
-     * Returns a string representation of this picture.
-     * The result is a <code>width</code>-by-<code>height</code> matrix of pixels,
-     * where the color of a pixel is represented using 6 hex digits to encode
-     * the red, green, and blue components.
-     *
-     * @return a string representation of this picture
-     */
+    /**
+     * Time complexity of O(row*col).
+      * Returns a string representation of this picture.
+      * The result is a <code>width</code>-by-<code>height</code> matrix of pixels,
+      * where the color of a pixel is represented using 6 hex digits to encode
+      * the red, green, and blue components.
+      *
+      * @return a string representation of this picture
+      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(width +"-by-" + height + " picture (RGB values given in hex)\n");
+        sb.append(width + "-by-" + height + " picture (RGB values given in hex)\n");
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 int rgb = 0;
@@ -411,27 +409,27 @@ public final class Picture implements ActionListener {
         throw new UnsupportedOperationException("hashCode() is not supported because pictures are mutable");
     }
 
-   /**
-    * Time complexity of O(1).
-     * Saves the picture to a file in either PNG or JPEG format.
-     * The filetype extension must be either .png or .jpg.
-     *
-     * @param name the name of the file
-     * @throws IllegalArgumentException if {@code name} is {@code null}
-     */
+    /**
+     * Time complexity of O(1).
+      * Saves the picture to a file in either PNG or JPEG format.
+      * The filetype extension must be either .png or .jpg.
+      *
+      * @param name the name of the file
+      * @throws IllegalArgumentException if {@code name} is {@code null}
+      */
     public void save(String name) {
         if (name == null) throw new IllegalArgumentException("argument to save() is null");
         save(new File(name));
         filename = name;
     }
 
-   /**
-    * Time complexity of O(1).
-     * Saves the picture to a file in a PNG or JPEG image format.
-     *
-     * @param  file the file
-     * @throws IllegalArgumentException if {@code file} is {@code null}
-     */
+    /**
+     * Time complexity of O(1).
+      * Saves the picture to a file in a PNG or JPEG image format.
+      *
+      * @param  file the file
+      * @throws IllegalArgumentException if {@code file} is {@code null}
+      */
     public void save(File file) {
         if (file == null) throw new IllegalArgumentException("argument to save() is null");
         filename = file.getName();
@@ -440,28 +438,25 @@ public final class Picture implements ActionListener {
         if ("jpg".equalsIgnoreCase(suffix) || "png".equalsIgnoreCase(suffix)) {
             try {
                 ImageIO.write(image, suffix, file);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else {
+        } else {
             System.out.println("Error: filename must end in .jpg or .png");
         }
     }
 
-   /**
-    * Time complexity of O(1).
-     * Opens a save dialog box when the user selects "Save As" from the menu.
-     */
+    /**
+     * Time complexity of O(1).
+      * Opens a save dialog box when the user selects "Save As" from the menu.
+      */
     @Override
     public void actionPerformed(ActionEvent e) {
         FileDialog chooser = new FileDialog(frame,
-                             "Use a .png or .jpg extension", FileDialog.SAVE);
+                                            "Use a .png or .jpg extension", FileDialog.SAVE);
         chooser.setVisible(true);
         if (chooser.getFile() != null) {
             save(chooser.getDirectory() + File.separator + chooser.getFile());
         }
     }
 }
-

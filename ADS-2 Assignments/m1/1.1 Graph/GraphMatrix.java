@@ -3,18 +3,16 @@
  */
 interface GraphM {
     /**.
-     *
-     * @return vertices.
+     *vertices.
      */
     int vert();
     /**.
-     *
-     * @return edges.
+     *edges.
      */
     int edge();
     /**.
      * Adds an edge.
-     *
+     * complexity is O(1).
      * @param v vert.
      * @param w w.
      */
@@ -31,7 +29,7 @@ interface GraphM {
 /**.
  * List of graphs.
  */
-public class GraphMat {
+public class GraphMatrix {
     /**.
      * vertices.
      */
@@ -45,11 +43,11 @@ public class GraphMat {
      */
     private int[][] adj;
     /**.
-     *
+     * array.
      */
     private String[] vertices;
     /**.
-     * { var_description }
+     * size.
      */
     private int size = 0;
     /**.
@@ -57,7 +55,7 @@ public class GraphMat {
      *
      * @param vt vertices.
      */
-    public GraphMat(final int vt) {
+    public GraphMatrix(final int vt) {
         this.ver = vt;
         this.edg = 0;
         this.adj = new int[ver][ver];
@@ -65,9 +63,8 @@ public class GraphMat {
         size = 0;
     }
     /**.
-     * { function_description }
-     *
-     * @return     { description_of_the_return_value }
+     * complexity is O(1).
+     * @return vertices.
      */
     public int vert() {
         return ver;
@@ -75,14 +72,14 @@ public class GraphMat {
     /**.
      * .
      * time complexity is 1.
-     * @return int.
+     * @return edges.
      */
     public int edge() {
         return edg;
     }
     /**.
      * Adds a vertex.
-     *
+     * complexity is O(1).
      * @param v adding vertex.
      */
     public void addVertex(final String v) {
@@ -90,7 +87,7 @@ public class GraphMat {
         size++;
     }
     /**
-     * time complexity is 1.
+     * time complexity is O(1).
      * @param  v vert.
      * @param  w w.
      */
@@ -108,7 +105,7 @@ public class GraphMat {
     }
     /**.
      * checks if it contains or not.
-     * time complexity is 1.
+     * time complexity is O(1).
      * @param v v.
      * @param w w.
      * @return int.

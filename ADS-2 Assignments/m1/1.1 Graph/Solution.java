@@ -1,22 +1,21 @@
+/**.
+ * importing files.
+ */
 import java.util.Scanner;
 /**.
- * { item_description }
+ * solution class.
  */
 public final class Solution {
     /**.
-     * Constructs the object.
+     * constructor.
      */
     private Solution() {
-        /**.
-         * { item_description }
-         */
+        //unused.
     }
     /**.
-     * { function_description }
-     *
-     * @param      args  The arguments
+     * time complexity for the main method is N.
+     * @param args  The arguments
      */
-    // time complexity for the main method is N
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String word = sc.nextLine();
@@ -30,22 +29,22 @@ public final class Solution {
                     System.out.println("No edges");
                     break;
                 }
-                String vertex1 = sc.nextLine();
-                String[] tokens = vertex1.split(",");
+                String ver1 = sc.nextLine();
+                String[] tokens1 = ver1.split(",");
                 GraphList graphlist = new GraphList(n);
                 for (int i = 0; i < n; i++) {
-                    graphlist.addVertex(tokens[i]);
+                    graphlist.addVertex(tokens1[i]);
                 }
                 String line1;
-                String[] input = new String[m];
+                String[] tokens2 = new String[m];
                 for (int i = 0; i < m; i++) {
                     line1 = sc.nextLine();
-                    input = line1.split(" ");
-                        graphlist.addEdge(Integer.parseInt(input[0]),
-                         Integer.parseInt(input[1]));
+                    tokens2 = line1.split(" ");
+                        graphlist.addEdge(Integer.parseInt(tokens2[0]),
+                         Integer.parseInt(tokens2[1]));
                 }
-                if (Integer.parseInt(input[0])
-                 == Integer.parseInt(input[1])) {
+                if (Integer.parseInt(tokens2[0])
+                 == Integer.parseInt(tokens2[1])) {
                     break;
                 } else {
                     System.out.println(graphlist.toString());
@@ -57,25 +56,25 @@ public final class Solution {
                     System.out.println("No edges");
                     break;
                 }
-                String vertices = sc.nextLine();
-                String[] strinput = vertices.split(",");
-                GraphMat graphmatrix = new GraphMat(n);
+                String vtxes = sc.nextLine();
+                String[] tokens3 = vtxes.split(",");
+                GraphMatrix graphmat = new GraphMatrix(n);
                 for (int i = 0; i < n; i++) {
-                    graphmatrix.addVertex(strinput[i]);
+                    graphmat.addVertex(tokens3[i]);
                 }
                 String line;
-                String[] input1 = new String[m];
+                String[] tokens = new String[m];
                 for (int i = 0; i < m; i++) {
                     line = sc.nextLine();
-                    input1 = line.split(" ");
-                    graphmatrix.addEdge(Integer.parseInt(input1[0]),
-                     Integer.parseInt(input1[1]));
+                    tokens = line.split(" ");
+                    graphmat.addEdge(Integer.parseInt(tokens[0]),
+                     Integer.parseInt(tokens[1]));
                 }
-                if (Integer.parseInt(input1[0])
-                 == Integer.parseInt(input1[1])) {
+                if (Integer.parseInt(tokens[0])
+                 == Integer.parseInt(tokens[1])) {
                     break;
                 } else {
-                    System.out.println(graphmatrix.toString());
+                    System.out.println(graphmat.toString());
                 }
                 break;
             default:
@@ -83,3 +82,5 @@ public final class Solution {
         }
     }
 }
+
+

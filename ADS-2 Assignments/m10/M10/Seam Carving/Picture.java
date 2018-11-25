@@ -1,20 +1,3 @@
-/******************************************************************************
- *  Compilation:  javac Picture.java
- *  Execution:    java Picture imagename
- *  Dependencies: none
- *
- *  Data type for manipulating individual pixels of an image. The original
- *  image can be read from a file in JPG, GIF, or PNG format, or the
- *  user can create a blank image of a given dimension. Includes methods for
- *  displaying the image in a window on the screen or saving to a file.
- *
- *  % java Picture mandrill.jpg
- *
- *  Remarks
- *  -------
- *   - pixel (x, y) is column x and row y, where (0, 0) is upper left
- *
- ******************************************************************************/
 
 import java.awt.Color;
 import java.awt.FileDialog;
@@ -464,3 +447,8 @@ public final class Picture implements ActionListener {
         }
     }
 }
+
+
+
+
+

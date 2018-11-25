@@ -3,13 +3,21 @@
  * Class for connected component.
  */
 class ConnectedComponent {
-
+    /**
+     * boolean[].
+     */
     private boolean[] marked;
-
+    /**
+     * int[].
+     */
     private int[] id;
-
+    /**
+     * int[].
+     */
     private int[] size;
-
+    /**
+     * int.
+     */
     private int count;
     /**
      * connected components of the

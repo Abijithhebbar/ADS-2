@@ -40,23 +40,23 @@ interface Graph {
  */
 class GraphList implements Graph {
     /**.
-     * { var_description }
+     * vertex.
      */
     private int ver;
     /**.
-     * { var_description }
+     * edge.
      */
     private int edg;
     /**.
-     * { var_description }
+     * array of bag type.
      */
     private Bag<Integer>[] adj;
     /**.
-     * { var_description }
+     * string[].
      */
     private String[] vertexes;
     /**.
-     * { var_description }
+     * size.
      */
     private int size = 0;
     /**
@@ -96,7 +96,7 @@ class GraphList implements Graph {
     /**.
      * Adds a vertex.
      * time complexity is 1
-     * @param      v     { parameter_description }
+     * @param v string.
      */
     public void addVertex(final String v) {
         vertexes[size] = v;
@@ -105,9 +105,8 @@ class GraphList implements Graph {
     /**.
      * Determines if it has edge.
      * time complexity is O(N).
-     * @param      v     { parameter_description }
-     * @param      w     { parameter_description }
-     *
+     * @param v v.
+     * @param w w.
      * @return True if has edge, False otherwise.
      */
     public boolean hasEdge(final int v, final int w) {
@@ -149,7 +148,7 @@ class GraphList implements Graph {
 
     /**
      * Returns the degree of vertex {@code v}.
-     *
+     * time complexity is O(1).
      * @param  v the vertex
      * @return the degree of vertex {@code v}
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
@@ -163,7 +162,7 @@ class GraphList implements Graph {
      * time complexity is O(N^2).
      * @return the number of vertices <em>V</em>, followed by
      * the number of edges <em>E</em>,
-     *         followed by the <em>V</em> adjacency lists
+     * followed by the <em>V</em> adjacency lists
      */
     public String toString() {
         String s = "";

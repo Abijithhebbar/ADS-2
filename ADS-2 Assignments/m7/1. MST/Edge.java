@@ -1,117 +1,72 @@
-/**.
+/**
  * Class for edge.
  */
-class Edge implements Comparable<Edge> {
-    /**.
-     * { var_description }
+public class Edge implements Comparable<Edge> {
+    /**
+     * vertex v source.
      */
     private final int v;
-    /**.
-     * { var_description }
+    /**
+     * vertex w destination.
      */
     private final int w;
-    /**.
-     * { var_description }
+    /**
+     * weight of edge.
      */
     private final double weight;
-    /**.
-     * Initializes an edge between vertices {@code v} and {@code w} of the
-     * given {@code weight}.
-     *
-     * @param      vert       The vertical
-     * @param      otherVert  The other vertical
-     * @param      wt         the other vertex
-     * @throws     IllegalArgumentException  if negative integer
-     * @throws     IllegalArgumentException  if {@code weight} is {@code NaN}
+    /**
+     *constructor.
+     * @param      v1  integer
+     * @param      w1  integer
+     * @param      weight1  The weight
      */
-    Edge(final int vert, final int otherVert, final double wt) {
-        if (vert < 0) {
-            throw new IllegalArgumentException(
-            "vertex index must be a nonnegative integer");
-        }
-        if (otherVert < 0) {
-            throw new IllegalArgumentException(
-                "vertex index must be a nonnegative integer");
-        }
-        if (Double.isNaN(wt)) {
-            throw new IllegalArgumentException("Weight is NaN");
-        }
-        this.v = vert;
-        this.w = otherVert;
-        this.weight = wt;
+    public Edge(final int v1, final int w1, final double weight1) {
+        this.v = v1;
+        this.w = w1;
+        this.weight = weight1;
     }
-
-    /**.
-     * Returns the weight of this edge.
-     *
-     * @return the weight of this edge
+    /**
+     *weight method.
+     * Time complexity is O(1).
+     * @return weight.
      */
     public double weight() {
         return weight;
     }
-
-    /**.
-     * Returns either endpoint of this edge.
-     *
-     * @return either endpoint of this edge
+    /**
+     * that vertex.
+     * Time complexity is O(1).
+     * @return vertex.
      */
     public int either() {
         return v;
     }
-
-    /**.
-     * Returns the endpoint of this edge that is
-     * different from the given vertex.
-     *
-     * @param  vertex one endpoint of this edge
-     * @return the other endpoint of this edge
-     * @throws IllegalArgumentException if the vertex is not one of the
-     *         endpoints of this edge
+    /**
+     *  next vertex.
+     * @param      vertex  The vertex
+     * Time complexity is O(1).
+     * @return other vertex.
      */
     public int other(final int vertex) {
-        if      (vertex == v) {
+        if (vertex == v) {
             return w;
         } else if (vertex == w) {
             return v;
-        } else {
+        }  else {
             throw new IllegalArgumentException("Illegal endpoint");
         }
-    }
 
-    /**.
-     * Compares two edges by weight.
-     * Note that {@code compareTo()} is not consistent with {@code equals()},
-     * which uses the reference equality implementation
-     *                      inherited from {@code Object}.
+
+    }
+    /**
+     * compare to method.
+     * Time complexity is O(1).
+     * @param      that  The that
      *
-     * @param  that the other edge
-     * @return a negative integer, zero, or positive integer
-     *         depending on whether
-     *         the weight of this is less than, equal to,
-     *         or greater than the
-     *         argument edge
+     * @return  integer.
      */
-    @Override
     public int compareTo(final Edge that) {
         return Double.compare(this.weight, that.weight);
     }
 
-    /**.
-     * Returns a string representation of this edge.
-     *
-     * @return a string representation of this edge
-     */
-    public String toString() {
-        return String.format("%d-%d %.5f", v, w, weight);
-    }
-
-    /**.
-     * Unit tests the {@code Edge} data type.
-     *
-     * @param args the command-line arguments
-     */
-    // public static void main(String[] args) {
-    //     Edge e = new Edge(12, 34, 5.67);
-    //     System.out.println(e);
-    // }
 }
